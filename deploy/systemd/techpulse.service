@@ -1,0 +1,14 @@
+[Unit]
+Description=TechPulse Gunicorn
+After=network.target
+
+[Service]
+User=techpulse
+Group=www-data
+WorkingDirectory=/srv/techpulse/app
+ExecStart=/srv/techpulse/venv/bin/gunicorn techpulse.wsgi:application --bind 127.0.0.1:8000 --workers 3
+Restart=always
+Environment=DJANGO_ALLOWED_HOSTS=*
+
+[Install]
+WantedBy=multi-user.target

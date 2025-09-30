@@ -1,0 +1,202 @@
+[
+  {
+    "model": "news.source",
+    "pk": 1,
+    "fields": {
+      "name": "BBC Technology",
+      "kind": "rss",
+      "url": "https://feeds.bbci.co.uk/news/technology/rss.xml",
+      "enabled": true
+    }
+  },
+  {
+    "model": "news.source",
+    "pk": 2,
+    "fields": {
+      "name": "The Guardian Tech",
+      "kind": "rss",
+      "url": "https://www.theguardian.com/technology/rss",
+      "enabled": true
+    }
+  },
+  {
+    "model": "news.source",
+    "pk": 3,
+    "fields": {
+      "name": "Ars Technica",
+      "kind": "rss",
+      "url": "https://feeds.arstechnica.com/arstechnica/index",
+      "enabled": true
+    }
+  },
+  {
+    "model": "news.source",
+    "pk": 4,
+    "fields": {
+      "name": "The Verge",
+      "kind": "rss",
+      "url": "https://www.theverge.com/rss/index.xml",
+      "enabled": true
+    }
+  },
+  {
+    "model": "news.source",
+    "pk": 5,
+    "fields": {
+      "name": "TechCrunch",
+      "kind": "rss",
+      "url": "https://techcrunch.com/feed/",
+      "enabled": true
+    }
+  },
+  {
+    "model": "news.source",
+    "pk": 6,
+    "fields": {
+      "name": "Wired",
+      "kind": "rss",
+      "url": "https://www.wired.com/feed/rss",
+      "enabled": true
+    }
+  },
+  {
+    "model": "news.source",
+    "pk": 7,
+    "fields": {
+      "name": "Engadget",
+      "kind": "rss",
+      "url": "https://www.engadget.com/rss.xml",
+      "enabled": true
+    }
+  },
+  {
+    "model": "news.source",
+    "pk": 8,
+    "fields": {
+      "name": "ZDNet",
+      "kind": "rss",
+      "url": "https://www.zdnet.com/news/rss.xml",
+      "enabled": true
+    }
+  },
+  {
+    "model": "news.source",
+    "pk": 9,
+    "fields": {
+      "name": "The Register",
+      "kind": "rss",
+      "url": "https://www.theregister.com/headlines.rss",
+      "enabled": true
+    }
+  },
+  {
+    "model": "news.source",
+    "pk": 10,
+    "fields": {
+      "name": "MIT Tech Review",
+      "kind": "rss",
+      "url": "https://www.technologyreview.com/topnews.rss",
+      "enabled": true
+    }
+  },
+  {
+    "model": "news.source",
+    "pk": 11,
+    "fields": {
+      "name": "VentureBeat",
+      "kind": "rss",
+      "url": "https://venturebeat.com/feed/",
+      "enabled": true
+    }
+  },
+  {
+    "model": "news.source",
+    "pk": 12,
+    "fields": {
+      "name": "Slashdot",
+      "kind": "rss",
+      "url": "http://rss.slashdot.org/Slashdot/slashdotMain",
+      "enabled": true
+    }
+  },
+  {
+    "model": "news.source",
+    "pk": 13,
+    "fields": {
+      "name": "Gizmodo",
+      "kind": "rss",
+      "url": "https://gizmodo.com/rss",
+      "enabled": true
+    }
+  },
+  {
+    "model": "news.source",
+    "pk": 14,
+    "fields": {
+      "name": "Tom's Hardware",
+      "kind": "rss",
+      "url": "https://www.tomshardware.com/feeds/all",
+      "enabled": true
+    }
+  },
+  {
+    "model": "news.source",
+    "pk": 15,
+    "fields": {
+      "name": "AnandTech",
+      "kind": "rss",
+      "url": "https://www.anandtech.com/rss/",
+      "enabled": true
+    }
+  },
+  {
+    "model": "news.source",
+    "pk": 16,
+    "fields": {
+      "name": "BleepingComputer",
+      "kind": "rss",
+      "url": "https://www.bleepingcomputer.com/feed/",
+      "enabled": true
+    }
+  },
+  {
+    "model": "news.source",
+    "pk": 17,
+    "fields": {
+      "name": "Krebs on Security",
+      "kind": "rss",
+      "url": "https://krebsonsecurity.com/feed/",
+      "enabled": true
+    }
+  },
+  {
+    "model": "news.source",
+    "pk": 18,
+    "fields": {
+      "name": "Hacker News (front page)",
+      "kind": "rss",
+      "url": "https://hnrss.org/frontpage",
+      "enabled": true
+    }
+  },
+  {
+    "model": "news.source",
+    "pk": 19,
+    "fields": {
+      "name": "Microsoft Azure Blog",
+      "kind": "rss",
+      "url": "https://azure.microsoft.com/en-us/updates/feed/",
+      "enabled": true
+    }
+  },
+  {
+    "model": "news.source",
+    "pk": 20,
+    "fields": {
+      "name": "Cloudflare Blog",
+      "kind": "rss",
+      "url": "https://blog.cloudflare.com/rss/",
+      "enabled": true
+    }
+  }
+]
