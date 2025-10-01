@@ -1,3 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual environment
+venv/
+
+# Django
+*.log
+*.sqlite3
+devserver.err
+devserver.log
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+*.swp
+
+# Large or temporary files
+*.iso
 __pycache__/
 *.pyc
 env/
