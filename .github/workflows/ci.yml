@@ -41,6 +41,10 @@ jobs:
         run: |
           python manage.py loaddata fixtures/sources.json
 
+      - name: Run Django tests
+        run: |
+          python manage.py test --verbosity=2
+
       - name: Smoke test API (Django test client)
         run: |
           python - <<'PY'
