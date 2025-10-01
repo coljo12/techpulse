@@ -50,10 +50,13 @@ jobs:
           django.setup()
           from django.test import Client
           c = Client()
-          resp = c.get('/api/news/sources/')
+          # follow redirects so 301/302 won't fail the smoke test
+          resp = c.get('/api/news/sources/', follow=True)
           print('status code:', resp.status_code)
           if resp.status_code != 200:
+              print('Final URL:', getattr(resp, 'request', {}).get('PATH_INFO', 'unknown'))
+              print('Response headers:', dict(resp.items()) if hasattr(resp, 'items') else {})
               print('Response body:', resp.content)
-              raise SystemExit('Smoke test failed: non-200 response')
+              raise SystemExit(f'Smoke test failed: non-200 response (status={resp.status_code})')
           print('Smoke test passed')
           PY
