@@ -50,7 +50,7 @@ jobs:
           django.setup()
           from django.test import Client
           c = Client()
-          resp = c.get('/api/news/sources')
+          resp = c.get('/api/news/sources/')
           print('status code:', resp.status_code)
           if resp.status_code != 200:
               print('Response body:', resp.content)
