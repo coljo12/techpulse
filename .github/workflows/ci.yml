@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run migrations
+        run: |
+          python manage.py migrate --noinput
+
+      - name: Load fixtures
+        run: |
+          python manage.py loaddata fixtures/sources.json
+
+      - name: Smoke test API (Django test client)
+        run: |
+          python - <<'PY'
+          import os
+          os.environ.setdefault('DJANGO_SETTINGS_MODULE','techpulse.settings')
+          import django
+          django.setup()
+          from django.test import Client
+          c = Client()
+          resp = c.get('/api/news/sources')
+          print('status code:', resp.status_code)
+          if resp.status_code != 200:
+              print('Response body:', resp.content)
+              raise SystemExit('Smoke test failed: non-200 response')
+          print('Smoke test passed')
+          PY
