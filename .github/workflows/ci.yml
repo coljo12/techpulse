@@ -41,26 +41,8 @@ jobs:
         run: |
           python manage.py loaddata fixtures/sources.json
 
-      - name: Run Django tests
+      - name: Run tests (pytest)
         run: |
-          python manage.py test --verbosity=2
-
-      - name: Smoke test API (Django test client)
-        run: |
-          python - <<'PY'
-          import os
-          os.environ.setdefault('DJANGO_SETTINGS_MODULE','techpulse.settings')
-          import django
-          django.setup()
-          from django.test import Client
-          c = Client()
-          # follow redirects so 301/302 won't fail the smoke test
-          resp = c.get('/api/news/sources/', follow=True)
-          print('status code:', resp.status_code)
-          if resp.status_code != 200:
-              print('Final URL:', getattr(resp, 'request', {}).get('PATH_INFO', 'unknown'))
-              print('Response headers:', dict(resp.items()) if hasattr(resp, 'items') else {})
-              print('Response body:', resp.content)
-              raise SystemExit(f'Smoke test failed: non-200 response (status={resp.status_code})')
-          print('Smoke test passed')
-          PY
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pytest -q

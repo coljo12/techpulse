@@ -5,3 +5,5 @@ feedparser
 requests
 python-dateutil
 gunicorn
+pytest
+pytest-django
